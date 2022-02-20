@@ -3,17 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	numerito := 45
-
-	if numerito > 10 {
-		fmt.Println("Soy mayor a 10")
-	} else if numerito < 10 {
-		fmt.Println("Soy un numero menor a 10")
-	} else {
-		fmt.Println("No soy un numerito :c")
+	for i := 0; i <= 10; i++ {
+		fmt.Println(i)
 	}
 
-	if numerito == 45 {
-		fmt.Println("Soy el numerito 45")
+	nombre := "Betito"
+	fmt.Println("Obten una letra de Betito", string(nombre[2]))
+
+	for i := 0; i < 7; i++ {
+		fmt.Println("Valor indice", string(nombre[i]))
 	}
 }
