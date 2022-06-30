@@ -1,37 +1,26 @@
 package main
 
-import "fmt"
-
-type persona struct {
-	nombre    string
-	apellidos string
-	edad      int
-}
+import (
+	"fmt"
+)
 
 func main() {
-	persona1 := persona{"Bill", "Gates", 65}
-	persona2 := persona{"Neysa", "Alarcon", 25}
+	frutas := []string{"pera", "manzana", "sandia"}
+	//					0		1			2
+	fmt.Println("Lista de frutas: ", frutas[2])
 
-	fmt.Println("Persona1: ", persona1)
-	fmt.Println("Persona2: ", persona2)
+	frutas = append(frutas, "naranja", "arándano", "durazno")
+	frutas[0] = "limon"
+	for i := 0; i < 6; i++ {
+		fmt.Println("Fruta ", frutas[i])
+	}
 
-	persona2.edad += 1
-
-	fmt.Println("Persona2 edad cambiada", persona2)
-
-	persona1.saludar("Hola")
-	persona2.saludar("Hi")
-
-	nuevoAno := persona1.cumpleanos()
-	fmt.Println("¿Cuántos años tienes Bill?", nuevoAno)
-
-	fmt.Println("¿Cuántos años tienes Ney?", persona2.cumpleanos())
-}
-
-func (p persona) saludar(saludo string) {
-	fmt.Println(saludo + ", " + p.nombre)
-}
-
-func (pers persona) cumpleanos() int {
-	return pers.edad + 1
+	for i := 0; i < len(frutas); i++ {
+		if frutas[i] == "pera" {
+			fmt.Println("Hay coincidencias: ", frutas[i])
+		} else {
+			fmt.Println("No hay coincidencias.")
+			break
+		}
+	}
 }
